@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/fonts/static/Mulish-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/fonts/static/Mulish-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/fonts/static/Mulish-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/fonts/static/Mulish-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/fonts/static/Mulish-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: #fff;
+  font-family: 'Mulish', sans-serif;
+  font-size: 18px!important;
+  color: #5B6871;
+  line-height: 24px;
+}
+
+.custom-button {
+  background-color: #FF8600;
+  color: white;
+  border-radius: 9999px; 
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+.custom-button:hover {
+  background-color: #d8701e;
+}
+
+.custom-input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem; 
+  padding: 0.5rem;
+  width: 100%;
+}
+.custom-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #FF8600;
+}
