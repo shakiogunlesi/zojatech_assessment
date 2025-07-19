@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Logo from './assets/icons/logo.svg';
 import Checkbox from './assets/icons/Checkbox.svg';
-import MailIcon from './assets/icons/mail.svg';
+import MailIcon from './assets/icons/Mail.svg';
 import GoogleIcon from './assets/icons/google-logo.svg';
 import ChatIcon from './assets/icons/chat.svg';
 import EmailIcon from './assets/icons/emailIcon.svg';
