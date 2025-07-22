@@ -3,19 +3,45 @@ import Logo from './assets/icons/logo.svg';
 import ProfileImage from './assets/icons/profileImage.svg';
 import Logout from './assets/icons/Logout.svg';
 import {
-  User, Mail, Search, Plus, Bell, TrendingUp, TrendingDown,
-  Heart, ThumbsUp, Flame, Users, Settings, Menu, X, Facebook, Instagram, Linkedin
+  User, Mail, Search, Plus, Bell, TrendingUp, MessageCircle, Share2,
+  Heart, Users, Settings, Menu, X, Facebook, Instagram, Linkedin
 } from 'lucide-react';
 import BarChart from './assets/icons/barchart.svg';
 import DollarSign from './assets/icons/dollarcoin.svg';
 import Circlelayer from './assets/icons/circlelayer.svg';
 import AddUser from './assets/icons/addAccount.svg';
 import ImpressIcon from './assets/icons/impressionIcon.svg';
+import Arrowup from './assets/icons/uparrow.svg';
+import Arrowdown from './assets/icons/downarrow.svg';
+import AaplChart from './assets/icons/aapl.png';
+import RussiaImg from './assets/icons/russiaImg.png';
+import ElonMuskImg from './assets/icons/elonMuskImg.png';
+import FuelcrisesImg from './assets/icons/fuelcrisesImg.png';
+import MemberImg from './assets/icons/wanda.png';
+import TerryImg from './assets/icons/terry.png';
+import LucasImg from './assets/icons/lucas.png';
+import JaniceImg from './assets/icons/janice.png';
+import TemmyImg from './assets/icons/temmy.png';
 
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  const barChartData = [
+    { month: 'JAN', value1: 750, value2: 620 },
+    { month: 'FEB', value1: 500, value2: 450 },
+    { month: 'MAR', value1: 600, value2: 580 },
+    { month: 'APR', value1: 580, value2: 620 },
+    { month: 'MAY', value1: 640, value2: 590 },
+    { month: 'JUN', value1: 900, value2: 720, highlight: true },
+    { month: 'JUL', value1: 760, value2: 680 },
+    { month: 'AUG', value1: 680, value2: 640 },
+    { month: 'SEP', value1: 540, value2: 580 },
+    { month: 'OCT', value1: 760, value2: 700 },
+    { month: 'NOV', value1: 450, value2: 480 },
+    { month: 'DEC', value1: 670, value2: 620 },
+  ];
 
   return (
     <div className="flex h-screen bg-[#F6F6F6] font-Lexend">
@@ -124,203 +150,254 @@ const Dashboard = () => {
         </div>
 
         <div className="p-4 lg:p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">51</p>
-                  <p className="text-[#A3A3A6] text-[12px]">Total Channels</p>
-                </div>
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#E0FAF5] rounded-[50%] flex items-center justify-center">
-                    <img src={Circlelayer} alt="Circlelayer" className="w-[20px] h-[20px]" />
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">125</p>
-                  <p className="text-[#A3A3A6] text-[12px]">New Members</p>
-                </div>
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#EFF2FE] rounded-[50%] flex items-center justify-center">
-                  <img src={AddUser} alt="AddUser" className="w-[20px] h-[20px]" />
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100 sm:col-span-2 lg:col-span-1">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">789</p>
-                  <p className="text-[#A3A3A6] text-[12px]">All Impressions</p>
-                </div>
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#FFF0E0] rounded-[50%] flex items-center justify-center">
-                  <img src={ImpressIcon} alt="ImpressIcon" className="w-[20px] h-[20px]" />
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2">
-              <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
-                <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-6">Overview</h2>
-                <div className="flex flex-wrap gap-1 mb-6 overflow-x-auto">
-                  <button className="bg-orange-500 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">Robbin Hood</button>
-                  <button className="text-gray-500 px-3 lg:px-4 py-2 hover:bg-gray-50 rounded-lg text-sm whitespace-nowrap">Amreitrade</button>
-                  <button className="text-gray-500 px-3 lg:px-4 py-2 hover:bg-gray-50 rounded-lg text-sm whitespace-nowrap">Fidelity</button>
-                  <button className="text-gray-500 px-3 lg:px-4 py-2 hover:bg-gray-50 rounded-lg text-sm whitespace-nowrap">Charles</button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
+                <div className="bg-white p-4 lg:p-5 rounded-[12px] shadow-sm border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">51</p>
+                      <p className="text-[#A3A3A6] text-[12px]">Total Channels</p>
+                    </div>
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#E0FAF5] rounded-[50%] flex items-center justify-center">
+                        <img src={Circlelayer} alt="Circlelayer" className="w-[20px] h-[20px]" />
+                    </div>
+                  </div>
                 </div>
                 
-                {/* Bar Chart */}
-                <div className="h-48 lg:h-64 relative">
-                  <div className="absolute inset-0 flex items-end justify-between px-2 lg:px-4">
-                    {[400, 350, 500, 450, 300, 650, 850, 600, 400, 700, 300, 450].map((height, index) => (
-                      <div key={index} className="flex flex-col items-center">
-                        <div 
-                          className={`w-4 lg:w-8 ${index === 5 ? 'bg-orange-500' : 'bg-gray-200'} rounded-t`}
-                          style={{ height: `${(height / 1000) * 100}%` }}
-                        ></div>
-                        <span className="text-[10px] lg:text-xs text-gray-400 mt-2">
-                          {['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'][index]}
-                        </span>
-                      </div>
+                <div className="bg-white p-4 lg:p-5 rounded-[12px] shadow-sm border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">125</p>
+                      <p className="text-[#A3A3A6] text-[12px]">New Members</p>
+                    </div>
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#EFF2FE] rounded-[50%] flex items-center justify-center">
+                      <img src={AddUser} alt="AddUser" className="w-[20px] h-[20px]" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-4 lg:p-5 rounded-[12px] shadow-sm border border-gray-100 sm:col-span-2 lg:col-span-1">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[25px] font-[700] text-[#3B3B45] mb-1">789</p>
+                      <p className="text-[#A3A3A6] text-[12px]">All Impressions</p>
+                    </div>
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#FFF0E0] rounded-[50%] flex items-center justify-center">
+                      <img src={ImpressIcon} alt="ImpressIcon" className="w-[20px] h-[20px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6">
+                  <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-4 lg:mb-0">Overview</h2>
+                  <div className="flex flex-wrap gap-2">
+                    <button className="bg-orange-500 text-white px-4 py-2 rounded-full text-xs font-medium">Robbin Hood</button>
+                    <button className="bg-gray-100 text-gray-600 px-4 py-2 hover:bg-gray-200 rounded-full text-xs font-medium">Amreitrade</button>
+                    <button className="bg-gray-100 text-gray-600 px-4 py-2 hover:bg-gray-200 rounded-full text-xs font-medium">Fidelity</button>
+                    <button className="bg-gray-100 text-gray-600 px-4 py-2 hover:bg-gray-200 rounded-full text-xs font-medium">Charles</button>
+                  </div>
+                </div>
+                
+                
+                <div className="h-64 relative bg-white rounded-lg p-4">
+                  
+                  <div className="absolute left-0 top-4 bottom-12 flex flex-col justify-between text-xs text-gray-400 w-10">
+                    {[1000, 800, 600, 400, 200, 0].map((label) => (
+                      <span key={label} className="text-right">{label}</span>
                     ))}
                   </div>
-                  
-                  {/* Y-axis labels */}
-                  <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] lg:text-xs text-gray-400 pr-2">
-                    <span>1000</span>
-                    <span>800</span>
-                    <span>600</span>
-                    <span>400</span>
-                    <span>200</span>
-                    <span>0</span>
+
+                  {/* Chart area */}
+                  <div className="ml-12 mr-4 h-full relative">
+                    {/* Grid lines */}
+                    <div className="absolute inset-0 flex flex-col justify-between">
+                      {[1000, 800, 600, 400, 200, 0].map((_, index) => (
+                        <div key={index} className="border-t border-gray-200 w-full"></div>
+                      ))}
+                    </div>
+
+                    <div className="absolute inset-0 flex items-end justify-between pb-8">
+                      {barChartData.map((item, index) => (
+                        <div key={index} className="flex flex-col items-center flex-1 max-w-16">
+                          <div className="flex items-end justify-center gap-1 mb-2">
+                           
+                            <div
+                              className={`w-3 rounded-t transition-all duration-300 ${
+                                item.highlight ? 'bg-orange-500 hover:bg-orange-600' : 'bg-gray-300 hover:bg-gray-400'
+                              }`}
+                              style={{ 
+                                height: `${Math.max((item.value1 / 1000) * 180, 4)}px`,
+                                minHeight: '4px'
+                              }}
+                              title={`${item.month} Series 1: ${item.value1}`}
+                            ></div>
+                            
+                            <div
+                              className={`w-3 rounded-t transition-all duration-300 ${
+                                item.highlight ? 'bg-orange-400 hover:bg-orange-500' : 'bg-gray-400 hover:bg-gray-500'
+                              }`}
+                              style={{ 
+                                height: `${Math.max((item.value2 / 1000) * 180, 4)}px`,
+                                minHeight: '4px'
+                              }}
+                              title={`${item.month} Series 2: ${item.value2}`}
+                            ></div>
+                          </div>
+                          
+                          <span className="text-xs text-gray-500 transform origin-center whitespace-nowrap">
+                            {item.month}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Trending Posts */}
               <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
-                <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-6">Trending Posts</h2>
-                <div className="space-y-6">
+                <h2 className="text-[20px] font-[700] text-[#3B3B45] mb-6">Trending Posts</h2>
+                <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-medium text-gray-800 mb-2 text-sm lg:text-base">8 Upcoming Influencer Marketing Trends and Benefits</h3>
-                    <p className="text-xs lg:text-sm text-gray-500 mb-3">Marketing is evolving. It's changing from a one-way street to a two-way conversa...</p>
+                    <h3 className="font-[600] text-[#3B3B45] mb-2 text-[18px]">8 Upcoming Influencer Marketing Trends and Benefits</h3>
+                    <p className="text-[14px] text-[#818187] mb-3">Marketing is evolving. It's changing from a one-way street to a two-way conversa...</p>
                     <div className="flex items-center space-x-4">
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
                         <Heart className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
                         260
                       </span>
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
-                        <ThumbsUp className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-orange-500" />
+                        <MessageCircle className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-orange-500" />
                         234
                       </span>
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
-                        <Flame className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
+                        <Share2 className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
                         123
                       </span>
                     </div>
                   </div>
                   
                   <div>
-                    <h3 className="font-medium text-gray-800 mb-2 text-sm lg:text-base">How Influencer Marketing Affects Consumer Buying Behavior</h3>
-                    <p className="text-xs lg:text-sm text-gray-500 mb-3">As influencer marketing continues to grow, consumers have been turning to their...</p>
+                    <h3 className="font-[600] text-[#3B3B45] mb-2 text-[18px]">How Influencer Marketing Affects Consumer Buying Behavior</h3>
+                    <p className="text-[14px] text-[#818187] mb-3">As influencer marketing continues to grow, consumers have been turning to their...</p>
                     <div className="flex items-center space-x-4">
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
                         <Heart className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
                         260
                       </span>
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
-                        <ThumbsUp className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-orange-500" />
+                        <MessageCircle className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-orange-500" />
                         234
                       </span>
                       <span className="flex items-center text-xs lg:text-sm text-gray-500">
-                        <Flame className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
+                        <Share2 className="w-3 h-3 lg:w-4 lg:h-4 mr-1 text-red-500" />
                         123
                       </span>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100 mt-6">
+                <h2 className="text-[20px] font-[700] text-gray-800 mb-6">Potential Members</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+                  {[
+                    { name: 'Wanda Parker', handle: '@ashking1234', growth: '10.3%', image: MemberImg },
+                    { name: 'Terry Brown', handle: '@ashking1234', growth: '9.8%', image: TerryImg },
+                    { name: 'Lucas Holmes', handle: '@ashking1234', growth: '6.5%', image: LucasImg },
+                    { name: 'Janice Miller', handle: '@ashking1234', growth: '8.6%', image: JaniceImg },
+                    { name: 'Temmy Brown', handle: '@ashking12345', growth: '7.8%', image: TemmyImg }
+                  ].map((member, index) => (
+                    <div key={index} className="text-center">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-10 h-10 lg:w-12 lg:h-12 rounded-full mx-auto mb-3 object-cover"
+                      />
+                      <p className="font-[600] text-[#3B3B45] text-[18px]">{member.name}</p>
+                      <p className="font-[400] text-[11px] text-[#818187] mb-1">{member.handle}</p>
+                      <div className="flex items-center justify-center">
+                        <TrendingUp className="w-[16px] h-[16px] text-green-500 mr-1" />
+                        <span className="text-[16px] text-[#3B3B45] font-[700]">{member.growth}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {/* Right Column */}
+            
             <div className="space-y-6">
               {/* Watchlist */}
               <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-lg lg:text-xl font-bold text-gray-800">Watchlist</h2>
-                  <button className="text-orange-500 text-xs lg:text-sm font-medium">VIEW ALL</button>
+                  <h2 className="text-[20px] font-[700] text-[#3B3B45]">Watchlist</h2>
+                  <button className="text-[#FF8600] text-[12px] font-[600]">VIEW ALL</button>
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="bg-[#F6F6F6] px-[16px] py-[12px] rounded-[12px] flex items-center justify-between">
                     <div>
                       <div className="flex items-center mb-1">
                         <span className="font-bold text-gray-800 mr-2 text-sm lg:text-base">AAPL</span>
-                        <TrendingUp className="w-3 h-3 lg:w-4 lg:h-4 text-green-500" />
+                        <img src={Arrowup} alt="Arrowup" className="w-[24px] h-[24px]" />
                       </div>
-                      <p className="text-lg lg:text-xl font-bold text-gray-800">$142.90</p>
-                      <p className="text-xs lg:text-sm text-green-500">+0.47%</p>
+                      <p className="text-[15px] font-[500] text-[#A3A3A6]">$142.90</p>
+                      <p className="text-[12px] font-[500] text-[#00A441]">+0.47%</p>
                     </div>
-                    <div className="w-12 lg:w-16 h-6 lg:h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded relative overflow-hidden">
-                      <svg className="w-full h-full" viewBox="0 0 64 32">
-                        <path d="M0,20 Q16,10 32,15 T64,12" stroke="white" strokeWidth="2" fill="none"/>
-                      </svg>
+                    <div className="relative overflow-hidden">
+                      <img src={AaplChart} alt="AaplChart" className="w-[100px] h-[40px] lg:w-[154px] lg:h-[59px]" />
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="bg-[#F6F6F6] px-[16px] py-[12px] rounded-[12px] flex items-center justify-between">
                     <div>
                       <div className="flex items-center mb-1">
                         <span className="font-bold text-gray-800 mr-2 text-sm lg:text-base">BPL</span>
-                        <TrendingDown className="w-3 h-3 lg:w-4 lg:h-4 text-red-500" />
+                        <img src={Arrowdown} alt="Arrowdown" className="w-[24px] h-[24px]" />
                       </div>
-                      <p className="text-lg lg:text-xl font-bold text-gray-800">$142.90</p>
-                      <p className="text-xs lg:text-sm text-red-500">-0.78%</p>
+                      <p className="text-[15px] font-[500] text-[#A3A3A6]">$142.90</p>
+                      <p className="text-[12px] font-[500] text-[#FF5252]">-0.78%</p>
                     </div>
-                    <div className="w-12 lg:w-16 h-6 lg:h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded relative overflow-hidden">
-                      <svg className="w-full h-full" viewBox="0 0 64 32">
-                        <path d="M0,12 Q16,8 32,18 T64,20" stroke="white" strokeWidth="2" fill="none"/>
-                      </svg>
+                    <div className="relative overflow-hidden">
+                      <img src={AaplChart} alt="AaplChart" className="w-[100px] h-[40px] lg:w-[154px] lg:h-[59px]" />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Revenue */}
-              <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
-                <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-6">Revenue</h2>
+              <div className="bg-white p-4 lg:p-6 rounded-[16px] shadow-sm border border-gray-100">
+                <h2 className="text-[20px] font-[700] text-[#3B3B45] mb-6">Revenue</h2>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between px-[16px] py-[8px] border border-[#F1F1F1]">
                     <div>
-                      <p className="text-xl lg:text-2xl font-bold text-gray-800">$4,000</p>
-                      <p className="text-xs lg:text-sm text-gray-500">Recently Added Pages</p>
+                      <p className="text-[18px] font-[600] text-[#3B3B45]">$4,000</p>
+                      <p className="text-[12px] font-[400] text-[#A3A3A6]">Recently Added Pages</p>
                     </div>
-                    <div className="w-6 h-6 lg:w-8 lg:h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                      <Facebook className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
+                    <div className="w-[48px] h-[48px] bg-[#EDF4FE] rounded-[50%] flex items-center justify-center">
+                      <Facebook className="w-3 h-3 lg:w-4 lg:h-4 text-[#1773EA]" />
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between px-[16px] py-[8px] border border-[#F1F1F1]">
                     <div>
-                      <p className="text-xl lg:text-2xl font-bold text-gray-800">$2,120</p>
-                      <p className="text-xs lg:text-sm text-gray-500">Video Monetization</p>
+                      <p className="text-[18px] font-[600] text-[#3B3B45]">$2,120</p>
+                      <p className="text-[12px] font-[400] text-[#A3A3A6]">Video Monetization</p>
                     </div>
-                    <div className="w-6 h-6 lg:w-8 lg:h-8 bg-pink-500 rounded-lg flex items-center justify-center">
-                      <Instagram className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
+                    <div className="w-[48px] h-[48px] bg-[#FEEFF1] rounded-[50%] flex items-center justify-center">
+                      <Instagram className="w-3 h-3 lg:w-4 lg:h-4 text-[#EB3348]" />
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between px-[16px] py-[8px] border border-[#F1F1F1]">
                     <div>
-                      <p className="text-xl lg:text-2xl font-bold text-gray-800">$1,752</p>
-                      <p className="text-xs lg:text-sm text-gray-500">Community Buildup</p>
+                      <p className="text-[18px] font-[600] text-[#3B3B45]">$1,752</p>
+                      <p className="text-[12px] font-[400] text-[#A3A3A6]">Community Buildup</p>
                     </div>
-                    <div className="w-6 h-6 lg:w-8 lg:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                      <Linkedin className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
+                    <div className="w-[48px] h-[48px] bg-[#EEF3F9] rounded-[50%] flex items-center justify-center">
+                      <Linkedin className="w-3 h-3 lg:w-4 lg:h-4 text-[#2764AC]" />
                     </div>
                   </div>
                 </div>
@@ -328,63 +405,36 @@ const Dashboard = () => {
 
               {/* Trending News */}
               <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
-                <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-6">Trending News</h2>
+                <h2 className="text-[20px] font-[700] text-[#3B3B45] mb-6">Trending News</h2>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-200 rounded-lg flex-shrink-0"></div>
+                    <img src={RussiaImg} alt="RussiaImg" className="w-[48px] h-[48px]" />
                     <div>
-                      <p className="font-medium text-gray-800 text-xs lg:text-sm">Russia & Ukraine War</p>
-                      <p className="text-[10px] lg:text-xs text-gray-500">Marketing is evolving. It's chang...</p>
+                      <p className="font-[600] text-[#3B3B45] text-[14px]">Russia & Ukraine War</p>
+                      <p className="font-[600] text-[12px] text-[#818187]">Marketing is evolving. It's chang...</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xs lg:text-sm">🐦</span>
-                    </div>
+                    <img src={ElonMuskImg} alt="ElonMuskImg" className="w-[48px] h-[48px]" />
                     <div>
-                      <p className="font-medium text-gray-800 text-xs lg:text-sm">Elon Musk bought Twitter</p>
-                      <p className="text-[10px] lg:text-xs text-gray-500">Twitter is the most useful social pl...</p>
+                      <p className="font-[600] text-[#3B3B45] text-[14px]">Elon Musk bought Twitter</p>
+                      <p className="font-[600] text-[12px] text-[#818187]">Twitter is the most useful social pl...</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xs lg:text-sm">⛽</span>
-                    </div>
+                    <img src={FuelcrisesImg} alt="FuelcrisesImg" className="w-[48px] h-[48px]" />
                     <div>
-                      <p className="font-medium text-gray-800 text-xs lg:text-sm">Fuel Crisis Everywhere</p>
-                      <p className="text-[10px] lg:text-xs text-gray-500">Due to covid situation in 2020 the...</p>
+                      <p className="font-[600] text-[#3B3B45] text-[14px]">Fuel Crisis Everywhere</p>
+                      <p className="font-[600] text-[12px] text-[#818187]">Due to covid situation in 2020 the...</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Potential Members */}
-          <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100 mt-6">
-            <h2 className="text-lg lg:text-xl font-bold text-gray-800 mb-6">Potential Members</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-              {[
-                { name: 'Wanda Parker', handle: '@ashking1234', growth: '10.3%' },
-                { name: 'Terry Brown', handle: '@ashking1234', growth: '9.8%' },
-                { name: 'Lucas Holmes', handle: '@ashking1234', growth: '6.5%' },
-                { name: 'Janice Miller', handle: '@ashking1234', growth: '8.6%' },
-                { name: 'Terry Brown', handle: '@ashking1234', growth: '9.8%' }
-              ].map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-300 rounded-full mx-auto mb-3"></div>
-                  <p className="font-medium text-gray-800 text-xs lg:text-sm">{member.name}</p>
-                  <p className="text-[10px] lg:text-xs text-gray-500 mb-1">{member.handle}</p>
-                  <div className="flex items-center justify-center">
-                    <TrendingUp className="w-2 h-2 lg:w-3 lg:h-3 text-green-500 mr-1" />
-                    <span className="text-[10px] lg:text-xs text-green-500 font-medium">{member.growth}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

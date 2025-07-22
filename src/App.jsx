@@ -6,7 +6,7 @@ import MailIcon from './assets/icons/Mail.svg';
 import GoogleIcon from './assets/icons/google-logo.svg';
 import ChatIcon from './assets/icons/chat.svg';
 import EmailIcon from './assets/icons/emailIcon.svg';
-import EnvilopeIcon from './assets/icons/envelope-circle-check-solid 1.svg'
+import EnvilopeIcon from './assets/icons/envelope-circle-check-solid 1.svg';
 import SentMailIcon from './assets/icons/emailSentIcon.svg';
 import { User, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import api from './api';
