@@ -10,7 +10,7 @@ import EnvilopeIcon from './assets/icons/envelope-circle-check-solid 1.svg';
 import SentMailIcon from './assets/icons/emailSentIcon.svg';
 import { User, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import api from './api';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard';
 
 function App() {
   const [showEmailForm, setShowEmailForm] = useState(false);
