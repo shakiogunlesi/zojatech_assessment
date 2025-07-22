@@ -259,7 +259,7 @@ const Dashboard = () => {
 
               <div className="bg-white p-4 lg:p-6 rounded-xl shadow-sm border border-gray-100">
                 <h2 className="text-[20px] font-[700] text-[#3B3B45] mb-6">Trending Posts</h2>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <div>
                     <h3 className="font-[600] text-[#3B3B45] mb-2 text-[18px]">8 Upcoming Influencer Marketing Trends and Benefits</h3>
                     <p className="text-[14px] text-[#818187] mb-3">Marketing is evolving. It's changing from a one-way street to a two-way conversa...</p>
